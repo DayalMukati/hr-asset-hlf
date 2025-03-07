@@ -127,7 +127,7 @@ func (s *SmartContract) BurnTokens(ctx contractapi.TransactionContextInterface, 
 }
 
 // GetAssetBalance retrieves the balance of an asset
-func (s *SmartContract) GetAssetBalance(ctx contractapi.TransactionContextInterface, assetID string) (*Token, error) {
+func (s *SmartContract) GetAsset(ctx contractapi.TransactionContextInterface, assetID string) (*Token, error) {
 	tokenJSON, err := ctx.GetStub().GetState(assetID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read asset: %v", err)
